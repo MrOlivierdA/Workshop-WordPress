@@ -16,6 +16,7 @@ In this workshop you will learn the basics of WordPress by creating a custom the
 - The Codex
 - Custom Posts
 - Advanced custom fields
+- WP_Query class
 - Images
 - Categories
 - Going further
