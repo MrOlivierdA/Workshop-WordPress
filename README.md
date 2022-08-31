@@ -6,7 +6,10 @@ In this workshop you will learn the basics of WordPress by creating a custom the
 
 ## Chapters
 
-- Installation
+# [Star Formation Theory][sft]
+[Reference to this section](#sft)
+
+- [Installation][install]
 - Overview the dashboard
 - Activate the custom theme
 - Pages templates
@@ -19,7 +22,7 @@ In this workshop you will learn the basics of WordPress by creating a custom the
 - Categories
 - Going further
 
-## Installation
+## [Installation](#install)
 
 Once you have launch your environment (a server with PHP & MySQL), you're ready to start. 
 
