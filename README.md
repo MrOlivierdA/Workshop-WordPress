@@ -8,6 +8,7 @@ In this workshop you will learn the basics of WordPress by creating a custom the
 
 - [Installation](#installation)
 - Overview the dashboard
+- Overview files structure
 - Activate the custom theme
 - Pages templates
 - The templates hierarchy
