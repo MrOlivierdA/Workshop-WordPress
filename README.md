@@ -21,9 +21,25 @@ In this workshop you will learn the basics of WordPress by creating a custom the
 
 ## Installation
 
+### Requirements
+
+To use WordPress, you must to install a HTTP server, Apache or Nginx.
+
+You also need to have PHP and MySQL (or MariaDB) & a Database manager (Workbench, phpMyAdmin...).
+
 Once you have launch your environment (a server with PHP & MySQL), you're ready to start. 
 
 > 👉 NB: in this repo, you have already a [docker environment](#the-docker-environment) ready, feel free to use it. 
+
+### WordPress files
+
+The WordPress files can be downloaded on the official website here : https://wordpress.org/download/
+
+You run these in your env & the WordPress will start. 
+
+For this workshop, we've already downloaded it for you in `src/public`.  
+
+### Link the database
 
 The first thing to do is to create an empty database in your DB manager. Git it a name. 
 
