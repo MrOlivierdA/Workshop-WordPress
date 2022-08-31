@@ -24,7 +24,7 @@
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) :
 		            the_post(); ?>
-				<div class="wd_bloc_main_article_div">
+				<a href="<?php the_permalink(); ?>" class="wd_bloc_main_article_div">
 					<div class="wd_bloc_main_article_div_div">
 						<img class="wd_bloc_main_article_div_div_img" alt="airfilter" src="<?php echo get_template_directory_uri();?>/src/img/ap-airfilter.png" />
 						<div class="wd_bloc_main_article_div_div_text">
@@ -32,7 +32,7 @@
 							<p class="wd_bloc_main_article_div_div_text_p">Solving the problem of poor indoor air quality by filtering the air</p>
 						</div>
 					</div>
-				</div>
+				</a>
                 <?php endwhile;?>
             <?php endif; ?>
 				<!------------------Made with love by Arthur Lefevre lefevre.arthur98@gmail.com--------------------->
