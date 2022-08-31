@@ -19,6 +19,32 @@ In this workshop you will learn the basics of WordPress by creating a custom the
 - Categories
 - Going further
 
+## Installation
+
+Once you have launch your environment (a server with PHP & MySQL), you're ready to start. 
+
+The first thing to do is to create an empty database in your DB manager. Git it a name. 
+
+The next step is to go the file ``wp-config.php` & write the correct info of your DB to be able to link it with WorkPress.  
+
+```php
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', 'designo');
+
+/** MySQL database username */
+define( 'DB_USER', 'root' );
+
+/** MySQL database password */
+define( 'DB_PASSWORD', 'password' );
+
+/** MySQL hostname */
+define( 'DB_HOST', 'mysql' );
+
+```
+
+> 👉 To allow plugins to be installed on Linux, you may write the following line in your `wp-config.php` file : `define('FS_METHOD','direct');`
+
 ---
 
 ## The Docker installation
