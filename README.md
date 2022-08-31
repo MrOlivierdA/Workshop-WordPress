@@ -23,7 +23,7 @@ In this workshop you will learn the basics of WordPress by creating a custom the
 
 Once you have launch your environment (a server with PHP & MySQL), you're ready to start. 
 
-> NB: in this repo, you have already a [docker environment](#the-docker-environment) ready, feel free to use it. 
+> 👉 NB: in this repo, you have already a [docker environment](#the-docker-environment) ready, feel free to use it. 
 
 The first thing to do is to create an empty database in your DB manager. Git it a name. 
 
