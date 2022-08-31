@@ -23,6 +23,8 @@ In this workshop you will learn the basics of WordPress by creating a custom the
 
 Once you have launch your environment (a server with PHP & MySQL), you're ready to start. 
 
+> NB: in this repo, you have already a [docker environment](#the-docker-environment) ready, feel free to use it. 
+
 The first thing to do is to create an empty database in your DB manager. Git it a name. 
 
 The next step is to go the file ``wp-config.php` & write the correct info of your DB to be able to link it with WorkPress.  
@@ -47,7 +49,7 @@ define( 'DB_HOST', 'mysql' );
 
 ---
 
-## The Docker installation
+## The Docker environment
 
 ### What is this ?
 This template repository is a boilerplate setup for a PHP application.
