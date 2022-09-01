@@ -111,8 +111,6 @@ function buildSize($taille, $w, $h, $crop, $preview, $fraction) {
 
 
 
-	// ACF CROP
-	add_filter( 'acf-image-crop/image-quality', function( $level ) { return 90; });
-
+	// // ACF CROP
 
 

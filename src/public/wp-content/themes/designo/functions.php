@@ -10,6 +10,7 @@
   };
   add_action( 'init', 'register_theme_menus' ); 
 
+  // Remove Gutenberg
     // for posts
   add_filter('use_block_editor_for_post', '__return_false', 10);
   // for post types
@@ -28,4 +29,4 @@ function my_wpadmin_sidebar_menu() {
   }
   add_action('admin_menu','my_wpadmin_sidebar_menu', 999);
 
-  require 'wp_image.php';
+require 'wp_image.php';
