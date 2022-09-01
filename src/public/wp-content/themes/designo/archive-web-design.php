@@ -1,43 +1,77 @@
 
-<?php if ( have_posts() ) : ?>
-<ul>
-
-    <?php while ( have_posts() ) :
-		the_post(); ?>
-		<li><h2><?php the_title(); ?></h2></li>
-        <?php endwhile;?>
-</ul> 
-<?php endif; // end if
-?>
 
 <?php get_header(); ?>
 
-<main class="wd_bloc_main">
+		<main class="wd_bloc_main">
 			<section class="wd_bloc_main_section">
 				<h1 class="wd_bloc_main_section_h1">App Design</h1>
 				<p class="wd_bloc_main_section_p">Our mobile designs bring intuitive digital solutions to your customers right at their fingertips.</p>
 			</section>
 
-			<img class="wd_bloc_main_img_deco_top" alt="deco" src="./src/img/deco_background_1_index.svg" />
+			<img class="wd_bloc_main_img_deco_top" alt="deco" src="<?php echo get_template_directory_uri();?>/src/img/deco_background_1_index.svg" />
 
-			<article class="wd_bloc_main_article">
+			
+			<!-- DEFAULT LOOP -->
             <?php if ( have_posts() ) : ?>
-                <?php while ( have_posts() ) :
-		            the_post(); ?>
-				<a href="<?php the_permalink(); ?>" class="wd_bloc_main_article_div">
-					<div class="wd_bloc_main_article_div_div">
-						<img class="wd_bloc_main_article_div_div_img" alt="airfilter" src="<?php echo get_template_directory_uri();?>/src/img/ap-airfilter.png" />
-						<div class="wd_bloc_main_article_div_div_text">
-							<h3 class="wd_bloc_main_article_div_div_text_h3"><?php the_title(); ?></h3>
-							<p class="wd_bloc_main_article_div_div_text_p">Solving the problem of poor indoor air quality by filtering the air</p>
+
+			<div class="wd_bloc_main_article">
+
+                <?php while ( have_posts() ) : the_post(); ?>
+
+				<article id="<?php echo $post->post_name; ?>">
+					<a href="<?php the_permalink(); ?>" class="wd_bloc_main_article_div">
+						<div class="wd_bloc_main_article_div_div">
+							<img class="wd_bloc_main_article_div_div_img" alt="<?php echo $post->post_name; ?>" src="<?php echo get_template_directory_uri();?>/src/img/ap-airfilter.png" />
+							<div class="wd_bloc_main_article_div_div_text">
+								<h1 class="wd_bloc_main_article_div_div_text_h3"><?php the_title(); ?></h1>
+								<p class="wd_bloc_main_article_div_div_text_p"><?php the_field('intro'); ?></p>
+							</div>
 						</div>
-					</div>
-				</a>
+					</a>
+				</article>
+
                 <?php endwhile;?>
-            <?php endif; ?>
-				<!------------------Made with love by Arthur Lefevre lefevre.arthur98@gmail.com--------------------->
-				
-			</article>
+
+			</div>
+
+            <?php endif; wp_reset_postdata(); ?>
+			<!-- END: DEFAULT LOOP -->
+			
+			
+			<!-- WP_QUERY LOOP -->
+			<?php 
+			$q = new WP_Query(array( 
+				'post_type' => 'web-design',
+				'order'   => 'DESC',
+				));
+
+			if ( $q->have_posts() ) : ?>
+
+			<div class="wd_bloc_main_article">
+
+				<?php while( $q->have_posts() ) : $q->the_post(); ?>
+
+				<article id="<?php echo $post->post_name; ?>">
+					<a href="<?php the_permalink(); ?>" class="wd_bloc_main_article_div">
+						<div class="wd_bloc_main_article_div_div">
+							<img class="wd_bloc_main_article_div_div_img" alt="<?php echo $post->post_name; ?>" src="<?php echo get_template_directory_uri();?>/src/img/ap-airfilter.png" />
+							<div class="wd_bloc_main_article_div_div_text">
+								<h1 class="wd_bloc_main_article_div_div_text_h3"><?php the_title(); ?></h1>
+								<p class="wd_bloc_main_article_div_div_text_p"><?php the_field('intro'); ?></p>
+								<?php $term= get_field('category'); ?>
+								<p class="wd_bloc_main_article_div_div_text_p"><?php  echo esc_html( $term->name ); ?></p>
+							</div>
+						</div>
+					</a>
+				</article>
+
+				<?php endwhile; ?>
+
+			</div>
+
+			<?php endif; wp_reset_postdata(); ?>
+			<!-- END: WP_QUERY LOOP -->
+
 
 			<nav class="wd_bloc_main_nav">
 				<ul class="wd_bloc_main_nav_ul">

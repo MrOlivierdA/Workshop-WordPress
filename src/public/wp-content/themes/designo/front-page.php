@@ -12,31 +12,35 @@
 
 			<img class="index_main_img_deco_top" alt="deco" src="<?php echo get_template_directory_uri(); ?>/src/img/deco_background_1_index.svg" />
 
+	
 			<nav class="index_main_nav">
 				<ul class="index_main_nav_ul">
+					<li class="index_main_nav_ul_li index_main_nav_ul_li-WD">
+						<a class="index_main_nav_ul_li_a" title="Designo Web Design page" href="<?php echo site_url(); ?>/web-design">
+							<div class="index_main_nav_ul_li_a_div">
+								<h2 class="index_main_nav_ul_li_a_div_h2">WEB DESIGN</h2>
+								<h3 class="index_main_nav_ul_li_a_div_h3">VIEW PROJECTS</h3>
+							</div>
+						</a>
+					</li>
 
+					<li class="index_main_nav_ul_li index_main_nav_ul_li-AD">
+						<a class="index_main_nav_ul_li_a" title="Designo App Design page" href="appdesign.html">
+							<div class="index_main_nav_ul_li_a_div">
+								<h2 class="index_main_nav_ul_li_a_div_h2">APP DESIGN</h2>
+								<h3 class="index_main_nav_ul_li_a_div_h3">VIEW PROJECTS</h3>
+							</div>
+						</a>
+					</li>
 
-	<?php 
-		$q = new WP_Query(array( 
-        	'post_type' => 'web-design',
-        	'order'   => 'ASC',
-			//'meta_key' => ''
-	    ));
-		if ( $q->have_posts() ) : while( $q->have_posts() ) : $q->the_post();?>
-		<li class="item-pate" id="<?php echo $post->post_name; ?>">
-			<a href="<?php the_permalink(); ?>">
-				<div class="text-container">
-					<h3 class="title"><?php the_title(); ?></h3>
-					<p class="intro"><?php the_field('intro'); ?>
-					<?php $term= get_field('category'); ?>
-					<p><?php  echo esc_html( $term->name ); ?></p>
-				</div>
-			</a>
-		</li>
-		<?php endwhile; endif; ?>
-	<?php wp_reset_postdata() ?>
-
-				
+					<li class="index_main_nav_ul_li index_main_nav_ul_li-GD">
+						<a class="index_main_nav_ul_li_a" title="Designo Home page" href="index.html">
+							<div class="index_main_nav_ul_li_a_div">
+								<h2 class="index_main_nav_ul_li_a_div_h2">GRAPHIC DESIGN</h2>
+								<h3 class="index_main_nav_ul_li_a_div_h3">VIEW PROJECTS</h3>
+							</div>
+						</a>
+					</li>
 				</ul>
 			</nav>
 

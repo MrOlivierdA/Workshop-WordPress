@@ -15,10 +15,12 @@
   // for post types
   add_filter('use_block_editor_for_post_type', '__return_false', 10);
 
+
+// Re-organise the dashboard menu
 function my_wpadmin_sidebar_menu() {
       remove_menu_page( 'index.php' );  // 'Dashboard'
       remove_menu_page( 'upload.php' );   // 'Media'
-      remove_menu_page('edit.php');
+      remove_menu_page( 'edit.php' );
       remove_menu_page( 'edit-comments.php' );
       remove_submenu_page('upload.php','media-new.php'); 
       remove_submenu_page('plugins.php','plugin-install.php'); //plugins
