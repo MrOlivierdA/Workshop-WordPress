@@ -18,12 +18,15 @@
 
                 <?php while ( have_posts() ) : the_post(); ?>
 
-				<article id="<?php echo $post->post_name; ?>">
+				<article class="wd_bloc_main_article_div" id="<?php echo $post->post_name; ?>">
 					<a href="<?php the_permalink(); ?>" class="wd_bloc_main_article_div">
 						<div class="wd_bloc_main_article_div_div">
-							<img class="wd_bloc_main_article_div_div_img" alt="<?php echo $post->post_name; ?>" src="<?php echo get_template_directory_uri();?>/src/img/ap-airfilter.png" />
+							<img class="wd_bloc_main_article_div_div_img" 
+								 alt="<?php echo $post->post_name; ?>" 
+								 src="<?php echo get_field('image')['sizes']['single-post']; ?>" 
+							/>
 							<div class="wd_bloc_main_article_div_div_text">
-								<h1 class="wd_bloc_main_article_div_div_text_h3"><?php the_title(); ?></h1>
+								<h1 class="wd_bloc_main_article_div_div_text_h1"><?php the_title(); ?></h1>
 								<p class="wd_bloc_main_article_div_div_text_p"><?php the_field('intro'); ?></p>
 							</div>
 						</div>
@@ -51,13 +54,16 @@
 
 				<?php while( $q->have_posts() ) : $q->the_post(); ?>
 
-				<article id="<?php echo $post->post_name; ?>">
+				<article class="wd_bloc_main_article_div" id="<?php echo $post->post_name; ?>">
 					<a href="<?php the_permalink(); ?>" class="wd_bloc_main_article_div">
 						<div class="wd_bloc_main_article_div_div">
-							<?php var_dump(get_field('image')); ?>
-							<img class="wd_bloc_main_article_div_div_img" alt="<?php echo $post->post_name; ?>" src="<?php echo get_field('image')['sizes']['single-post']; ?>" />
+							<?php //var_dump(get_field('image')); ?>
+							<img class="wd_bloc_main_article_div_div_img" 
+								 alt="<?php echo $post->post_name; ?>" 
+								 src="<?php echo get_field('image')['sizes']['single-post']; ?>" 
+							/>
 							<div class="wd_bloc_main_article_div_div_text">
-								<h1 class="wd_bloc_main_article_div_div_text_h3"><?php the_title(); ?></h1>
+								<h1 class="wd_bloc_main_article_div_div_text_h1"><?php the_title(); ?></h1>
 								<p class="wd_bloc_main_article_div_div_text_p"><?php the_field('intro'); ?></p>
 								<?php $term= get_field('category'); ?>
 								<p class="wd_bloc_main_article_div_div_text_p"><?php  echo esc_html( $term->name ); ?></p>

@@ -58,9 +58,11 @@
 
 .wd_bloc_main_article_div_div_img {
 	border-radius: 15px 15px 0px 0px;
+	height: 300px;
+	width: 100%;
 }
 
-.wd_bloc_main_article_div_div_text_h3 {
+.wd_bloc_main_article_div_div_text_h1 {
 	@include h3jm;
 	margin-bottom: 16px;
 	text-align: center;
@@ -76,13 +78,11 @@
 .wd_bloc_main_article_div_div_text:hover {
 	color: white;
 	background-color: $peach;
-	transition: 0.5s ease;
+	h1 {
+		color: white;
+	}
 }
 
-.wd_bloc_main_article_div_div_text:hover h3 {
-	color: white;
-	transition: 0.5s ease;
-}
 
 .wd_bloc_main_article_div_div_text_p {
 	@include bodyjr;
